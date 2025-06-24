@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-inline-size: 1000px;
+  margin-inline: auto;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+.pizza-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-inline-size: 250px;
+  max-block-size: auto;
+  margin-block: 1px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.pizza-item h3 {
+  margin: 12px 0 6px;
+  font-size: 1.5em;
+}
+
+.pizza-item p {
+  font-size: 3rem;
+  color: #555;
+}
+
+.pizza-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  border: 5px red dotted;
+}
