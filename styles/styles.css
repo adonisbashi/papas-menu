@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #282626;
 }
 
 .wrapper {
@@ -12,32 +15,72 @@ img {
   max-inline-size: 100%;
 }
 
+.primary-navigation {
+  border-bottom: 1px solid black;
+  background-color: #a3a3a3;
+  margin-left: auto;
+  padding: auto;
+  align-self: center;
+}
+
+.primary-navigation ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.halal-logo {
+  max-width: 100%;
+  height: 100px;
+}
+
+nav a {
+  display: flex;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  color: red;
+}
+
+nav a:hover {
+  background-color: aqua;
+}
+
+.navigation-bar {
+  display: flex;
+}
+
 .pizza-item {
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 16px;
   max-inline-size: 250px;
   max-block-size: auto;
   margin-block: 1px;
   text-align: center;
-  background-color: #fff;
+  background-color: #ff4141;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pizza-item img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .pizza-item h3 {
   margin: 12px 0 6px;
   font-size: 1.5em;
+  color: #ffffff;
 }
 
 .pizza-item p {
   font-size: 3rem;
-  color: #555;
+  color: #ffffff;
 }
 
 .pizza-grid {
@@ -47,8 +90,26 @@ img {
   justify-content: center;
 }
 
+.h1-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  border: solid red;
+  padding: 1rem;
+  max-inline-size: 70%;
+  color: #ffffff;
+}
+
 h2 {
   display: flex;
   justify-content: center;
-  border: 5px red dotted;
+  font-size: 3rem;
+  color: white;
+  padding: 3rem;
 }
