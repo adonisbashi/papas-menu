@@ -21,13 +21,12 @@ img {
   margin-left: auto;
   padding: auto;
   align-self: center;
-  flex-shrink: 1000px;
 }
 
 .primary-navigation ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
@@ -46,7 +45,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: aqua;
+  background-color: rgba(116, 115, 115, 0.565);
 }
 
 .navigation-bar {
@@ -58,7 +57,6 @@ nav a:hover {
   border-radius: 8px;
   padding: 16px;
   max-inline-size: 250px;
-  max-block-size: auto;
   margin-block: 1px;
   text-align: center;
   background-color: #ff4141;
@@ -66,15 +64,17 @@ nav a:hover {
 }
 
 .chicken-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #ffffff;
   border-radius: 8px;
-  padding: 16px;
   max-inline-size: 250px;
-  max-block-size: auto;
+  height: 100%;
   margin-block: 1px;
   text-align: center;
-  background-color: #ff4141;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
 .sandwich-item {
@@ -83,13 +83,12 @@ nav a:hover {
   justify-content: space-between;
   border: 1px solid #ffffff;
   border-radius: 8px;
-  padding: 16px;
   max-inline-size: 250px;
-  max-block-size: auto;
+  height: 100%;
   margin-block: 1px;
   text-align: center;
-  background-color: #ff4141;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
 .pizza-item img {
@@ -124,14 +123,16 @@ nav a:hover {
 
 .chicken-item h3 {
   margin: 12px 0 6px;
-  font-size: 1.5em;
+  font-size: 2.5rem;
   color: #ffffff;
+  border-bottom: solid 2px white;
 }
 
 .sandwich-item h3 {
   margin: 12px 0 6px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #ffffff;
+  border-bottom: solid 2px white;
 }
 
 .pizza-item p {
@@ -140,13 +141,37 @@ nav a:hover {
 }
 
 .chicken-item p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffffff;
 }
 
-.sandwich-item p {
+/* .sandwich-item p {
   font-size: 2rem;
   color: #ffffff;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+} */
+
+.sandwich-item .description,
+.chicken-item .description {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.sandwich-item .price,
+.chicken-item .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgb(255, 0, 0);
 }
 
 .pizza-grid {
@@ -160,18 +185,33 @@ nav a:hover {
 }
 
 .chicken-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: space-evenly;
+}
+
+.chicken-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .sandwich-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: space-evenly;
+  row-gap: 50px;
+}
+
+.sandwich-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .h1-wrapper {
@@ -188,8 +228,7 @@ h1 {
   max-width: 90%; */
   font-size: 4rem;
   color: #ffffff;
-  background-color: #000; /* or your red */
-  border: solid 2px red;
+  border-bottom: solid 2px red;
   padding: 1rem;
   text-align: center;
   margin: 0 auto;
@@ -208,5 +247,16 @@ h2 {
   h1 {
     font-size: 2.5rem;
     padding: 0.5rem;
+  }
+}
+
+@media (width < 715px) {
+  .primary-navigation ul {
+    justify-content: space-around;
+  }
+
+  .primary-navigation a {
+    font-size: 1rem;
+    padding: 0.25em 0.75em;
   }
 }
