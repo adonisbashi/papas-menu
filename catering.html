@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catering</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- <link rel="scripts" href="scripts/scripts.js" /> -->
+    <script src="scripts/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div class="navigation-bar">
+          <img
+            class="halal-logo"
+            src="images/halal-logo.png"
+            alt="halal papas pizza logo"
+          />
+          <nav class="primary-navigation">
+            <ul>
+              <li class="home-li"><a href="index.html">Home</a></li>
+              <li><a href="pizza.html">Pizza</a></li>
+              <li><a href="chicken.html">Wings & Chicken</a></li>
+              <li><a href="catering.html">Catering</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="h1-wrapper">
+          <h1>Catering</h1>
+        </div>
+        <div class="h2-wrapper">
+          <h2>HOW MUCH SHOULD I ORDER?</h2>
+        </div>
+        <section class="party-type">
+          <h3>Number of Guests</h3>
+          <div class="slider-wrapper">
+            <input
+              type="range"
+              id="guest-slider"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+            />
+            <!-- This is the floating bubble above the thumb -->
+            <div id="slider-label" class="slider-thumb-label">0</div>
+
+            <!-- This is the label for the thumb slider -->
+            <div id="slider-thumb-number" class="slider-thumb-number">0</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
