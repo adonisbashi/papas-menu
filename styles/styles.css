@@ -329,7 +329,7 @@ h2 {
 .party-options {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
@@ -342,10 +342,10 @@ h2 {
   background: transparent;
   margin: 0;
   padding: 0;
-  border: 2px solid #aaa;
+  border: 0.125rem solid #aaa;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -359,20 +359,27 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 0.8rem;
+  height: 0.8rem;
   background: #2be52b;
   border-radius: 50%;
 }
 
-/* Align text and radio button */
 .option {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* prevents the radio from shifting on wrapped text */
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
   color: white;
   cursor: pointer;
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+.option span {
+  display: inline-block;
+  white-space: nowrap;
+  flex: 1;
 }
 
 .option input[type='radio']:focus {
