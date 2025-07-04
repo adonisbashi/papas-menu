@@ -30,6 +30,7 @@ img {
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .halal-logo {
@@ -250,7 +251,7 @@ h2 {
 .slider-wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 40px auto;
   box-sizing: border-box;
