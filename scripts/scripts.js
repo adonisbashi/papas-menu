@@ -21,21 +21,19 @@ function updateSliderUI() {
   calculateRecommendations();
 }
 
+// This grabs all the party type radio buttons
+const partyRadios = document.querySelectorAll('input[name="party-type"]');
+
+// This grabs all the item value elements
+const itemValues = document.querySelectorAll('.item-value');
+
 partyRadios.forEach((radio) => {
   radio.addEventListener('change', () => {
     calculateRecommendations();
   });
 });
 
+function calculateRecommendations() {}
+
 slider.addEventListener('input', updateSliderUI);
 window.addEventListener('load', updateSliderUI);
-
-// This grabs the guest slider and label
-const guestSlider = document.getElementById('guest-slider');
-const sliderLabel = document.getElementById('slider-label');
-
-// This grabs all the party type radio buttons
-const partyRadios = document.querySelectorAll('input[name="party-type"]');
-
-// This grabs all the item value elements
-const itemValues = document.querySelectorAll('.item-value');
