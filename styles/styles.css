@@ -440,6 +440,15 @@ h2 {
   max-width: 100%;
 }
 
+.pizza-output {
+  font-size: 1.1rem;
+  line-height: 2;
+  text-align: left;
+  white-space: pre-line;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
 @media screen and (width < 600px) {
   .catering-calculator-options {
     flex: 0 1 45%;
