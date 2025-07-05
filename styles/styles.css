@@ -399,6 +399,41 @@ h2 {
   font-size: 2rem;
 }
 
+/* .catering-calculator-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  background-color: #1a1a1a; /* optional, just helps distinguish 
+  text-align: center;
+}
+
+.catering-calculator-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  flex: none;
+  width: auto;
+  max-width: 100%;
+}
+
+.item-name {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  flex: none;
+  width: auto;
+  max-width: 100%;
+} */
+
 .catering-calculator-options {
   display: flex;
   width: 100%;
