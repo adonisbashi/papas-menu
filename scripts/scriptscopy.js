@@ -186,14 +186,15 @@ function calculateRecommendations() {
         recommendations[item] = {
           label:
             halfQty === 0
-              ? `${fullQty} Full`
+              ? `<div class="tray-label"><span class="tray-count">${fullQty}</span> <span class="tray-size full">Full</span></div>`
               : fullQty === 0
-              ? `${halfQty} Half`
-              : `${fullQty} Full + ${halfQty} Half`,
+              ? `<div class="tray-label"><span class="tray-count">${halfQty}</span> <span class="tray-size half">Half</span></div>`
+              : `<div class="tray-label"><span class="tray-count">${fullQty}</span> <span class="tray-size full">Full</span><br><span class="tray-count">${halfQty}</span> <span class="tray-size half">Half</span></div>`,
           totalServes:
             fullQty * config.full.serves + halfQty * config.half.serves,
           totalCost: fullQty * config.full.price + halfQty * config.half.price,
         };
+
         break;
 
       case 'pizza':
@@ -234,8 +235,8 @@ function calculateRecommendations() {
         }
 
         let pizzaLabel = Object.values(pizzaBreakdown)
-          .map((p) => `${p.count} × ${p.label}`)
-          .join('<br>');
+          .map((p) => `<div class="pizza-line">${p.count} ${p.label}</div>`)
+          .join('');
 
         recommendations[item] = {
           label: pizzaLabel,
@@ -252,7 +253,7 @@ function calculateRecommendations() {
           const totalCost = roundedPieces * pricePerWing;
 
           recommendations[item] = {
-            label: `${roundedPieces} Wings`,
+            label: `${roundedPieces}`,
             totalServes: roundedPieces,
             totalCost: totalCost,
           };
@@ -261,7 +262,7 @@ function calculateRecommendations() {
           const ordersNeeded = Math.ceil(totalPieces / config.piecesPerOrder);
 
           recommendations[item] = {
-            label: `${ordersNeeded} Orders`,
+            label: `${ordersNeeded}`,
             totalServes: ordersNeeded * config.piecesPerOrder,
             totalCost: ordersNeeded * config.pricePerOrder,
           };
