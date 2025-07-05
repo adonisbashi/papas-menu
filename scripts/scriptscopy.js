@@ -73,7 +73,6 @@ const partyTypeItems = {
     'pizza',
     'breadsticks',
     'wings',
-    'tenders',
     'salad',
     'mostaccioli',
     'lasagna',
@@ -109,6 +108,27 @@ function updateSliderUI() {
 
   calculateRecommendations();
 }
+
+slider.addEventListener('pointerdown', () => {
+  label.classList.add('active');
+});
+
+slider.addEventListener('pointerup', () => {
+  label.classList.remove('active');
+});
+
+document.addEventListener('pointerup', () => {
+  label.classList.remove('active');
+});
+
+slider.addEventListener('input', () => {
+  updateSliderUI(); // This still updates label position and text
+});
+
+// Optional safety: make sure it's hidden on load
+document.addEventListener('DOMContentLoaded', () => {
+  label.classList.remove('active');
+});
 
 // When radio selection changes, recalculate
 partyRadios.forEach((radio) => {
@@ -280,6 +300,18 @@ function calculateRecommendations() {
   }
 
   updateUIWithRecommendations(recommendations);
+
+  // Calculates the total price for all items
+  let totalPrice = 0;
+
+  for (const rec of Object.values(recommendations)) {
+    totalPrice += rec.totalCost || 0;
+  }
+
+  const totalPriceEl = document.getElementById('total-price');
+  if (totalPriceEl) {
+    totalPriceEl.textContent = `$${totalPrice.toFixed(2)}`;
+  }
 }
 
 // Render each label into the appropriate spot in the UI

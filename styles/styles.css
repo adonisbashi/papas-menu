@@ -300,8 +300,8 @@ h2 {
 /* === Label Bubble Above Thumb === */
 .slider-thumb-label {
   position: absolute;
-  top: -70px;
-  width: 60px;
+  top: -50px;
+  width: 50px;
   height: 50px;
   background: #d62828c5;
   color: white;
@@ -312,8 +312,21 @@ h2 {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 10;
+  text-align: center;
+  line-height: 50px;
+
+  /* ✨ Fade settings */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* 👇 This class will trigger the fade-in */
+.slider-thumb-label.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .party-type h3 {
@@ -507,6 +520,14 @@ h2 {
 .tray-count {
   font-size: 2rem;
   font-weight: 600;
+}
+
+.catering-total {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 2rem;
 }
 
 @media screen and (width < 600px) {
