@@ -140,6 +140,7 @@ partyRadios.forEach((radio) => {
 // When slider moves, update values
 slider.addEventListener('input', updateSliderUI);
 window.addEventListener('load', updateSliderUI);
+window.addEventListener('resize', updateSliderUI);
 
 // Returns multiplier based on selected party type
 function getPartyTypeModifier() {
