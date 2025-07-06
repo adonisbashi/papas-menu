@@ -35,22 +35,27 @@
         <section class="party-type">
           <h3>Number of Guests</h3>
           <div class="slider-wrapper">
-            <input
-              type="range"
-              id="guest-slider"
-              min="0"
-              max="100"
-              step="1"
-              value="0"
-            />
-            <!-- This is the floating bubble above the thumb -->
-            <!-- <div class="slider-start-value">0</div> -->
-            <div id="slider-label" class="slider-thumb-label">0</div>
-            <!-- <div class="slider-end-value">100</div> -->
+            <div class="slider-start-value">0</div>
+            <div class="slider-track-wrapper">
+              <input
+                type="range"
+                id="guest-slider"
+                min="0"
+                max="100"
+                step="1"
+                value="0"
+              />
+              <!-- This is the floating bubble above the thumb -->
+              <!-- <div class="slider-start-value">0</div> -->
+              <div id="slider-label" class="slider-thumb-label">0</div>
+              <!-- <div class="slider-end-value">100</div> -->
 
-            <!-- This is the label for the thumb slider -->
-            <div id="slider-thumb-number" class="slider-thumb-number">0</div>
+              <!-- This is the label for the thumb slider -->
+              <div id="slider-thumb-number" class="slider-thumb-number">0</div>
+            </div>
+            <div class="slider-end-value">100</div>
           </div>
+
           <div class="party-options">
             <label class="option">
               <input type="radio" name="party-type" value="party" checked />

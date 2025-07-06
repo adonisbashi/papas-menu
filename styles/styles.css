@@ -249,12 +249,31 @@ h2 {
 }
 
 .slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100%;
   max-width: 800px;
   margin: 40px auto;
   padding: 40px auto;
   box-sizing: border-box;
+}
+
+.slider-track-wrapper {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.slider-start-value,
+.slider-end-value {
+  color: white;
+  font-size: 1.5rem;
+  width: 30px;
+  text-align: center;
+  margin-inline: 20px;
+  font-weight: bold;
 }
 
 #guest-slider {
