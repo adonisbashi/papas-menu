@@ -287,6 +287,11 @@ h2 {
   position: relative;
   z-index: 1;
   margin: 0;
+  cursor: grab;
+}
+
+#guest.slider-dragging {
+  cursor: grabbing;
 }
 
 /* === Thumb === */
@@ -296,9 +301,13 @@ h2 {
   width: 40px;
   border-radius: 50%;
   background: #d62828;
-  cursor: pointer;
+  cursor: grab;
   position: relative;
   z-index: 2;
+}
+
+#guest-slider.dragging::-webkit-slider-thumb {
+  cursor: grabbing;
 }
 
 .slider-thumb-number {

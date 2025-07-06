@@ -61,7 +61,7 @@ const cateringItems = {
 // Party type modifies guest count to account for appetite differences
 const partyTypeModifiers = {
   party: 0.75,
-  loaded: 0.6,
+  corporate: 0.6,
   pizza: 1,
   kids: 0.7,
 };
@@ -69,7 +69,7 @@ const partyTypeModifiers = {
 // Defines which catering items show depending on the selected party type
 const partyTypeItems = {
   party: ['pizza', 'breadsticks', 'wings', 'salad', 'cookies'],
-  loaded: [
+  corporate: [
     'pizza',
     'breadsticks',
     'wings',
@@ -90,6 +90,16 @@ const slider = document.getElementById('guest-slider'); // guest range input
 const label = document.getElementById('slider-label'); // label above slider
 const thumbNumber = document.getElementById('slider-thumb-number'); // number inside thumb
 
+function startDragging() {
+  document.body.classList.add('slider-grabbing');
+  slider.classList.add('dragging');
+}
+
+function stopDragging() {
+  document.body.classList.remove('slider-grabbing');
+  slider.classList.remove('dragging');
+}
+
 // Updates slider UI position and value labels
 function updateSliderUI() {
   const sliderWidth = slider.offsetWidth;
@@ -109,17 +119,13 @@ function updateSliderUI() {
   calculateRecommendations();
 }
 
-slider.addEventListener('pointerdown', () => {
-  label.classList.add('active');
-});
+slider.addEventListener('pointerdown', startDragging);
+slider.addEventListener('pointerup', stopDragging);
+document.addEventListener('pointerup', stopDragging);
 
-slider.addEventListener('pointerup', () => {
-  label.classList.remove('active');
-});
-
-document.addEventListener('pointerup', () => {
-  label.classList.remove('active');
-});
+slider.addEventListener('mousedown', startDragging);
+slider.addEventListener('mouseup', stopDragging);
+document.addEventListener('mouseup', stopDragging);
 
 slider.addEventListener('input', () => {
   updateSliderUI(); // This still updates label position and text
