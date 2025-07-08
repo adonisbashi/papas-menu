@@ -210,13 +210,30 @@ function calculateRecommendations() {
           }
         }
 
+        let label = '';
+
+        if (fullQty === 0 && halfQty === 0) {
+          label = '0';
+        } else {
+          const parts = [];
+
+          if (fullQty > 0) {
+            parts.push(
+              `<span class="tray-count">${fullQty}</span> <span class="tray-size full">Full</span>`
+            );
+          }
+
+          if (halfQty > 0) {
+            parts.push(
+              `<span class="tray-count">${halfQty}</span> <span class="tray-size half">Half</span>`
+            );
+          }
+
+          label = `<div class="tray-label">${parts.join(' + ')}</div>`;
+        }
+
         recommendations[item] = {
-          label:
-            halfQty === 0
-              ? `<div class="tray-label"><span class="tray-count">${fullQty}</span> <span class="tray-size full">Full</span></div>`
-              : fullQty === 0
-              ? `<div class="tray-label"><span class="tray-count">${halfQty}</span> <span class="tray-size half">Half</span></div>`
-              : `<div class="tray-label"><span class="tray-count">${fullQty}</span> <span class="tray-size full">Full</span><br><span class="tray-count">${halfQty}</span> <span class="tray-size half">Half</span></div>`,
+          label,
           totalServes:
             fullQty * config.full.serves + halfQty * config.half.serves,
           totalCost: fullQty * config.full.price + halfQty * config.half.price,
